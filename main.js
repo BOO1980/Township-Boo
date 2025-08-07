@@ -6,7 +6,9 @@ const app = new PIXI.Application({
   height: 600,
   backgroundColor: 0x1099bb,
 });
-document.body.appendChild(app.view);
+document.body.appendChild(app.canvas);
+// Deprecated: Use app.canvas instead of app.view
+// Why? PixiJS v8 introduced this change to make the naming clearer and to avoid confusion, as .canvas more accurately reflects the type of element being referenced.
 
 // Load a sprite (a simple graphic to demonstrate)
 const graphics = new PIXI.Graphics();
