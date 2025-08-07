@@ -22,6 +22,8 @@ async function init() {
   // Load a sprite (a simple graphic to demonstrate)
   const graphics = new PIXI.Graphics();
   graphics.fill(0xde3249).circle(0, 0, 50);
+  // graphics.endFill();
+  //  endFill() is no longer needed (and shouldn't be used) in PixiJS v8.
 
   const texture = app.renderer.generateTexture(graphics);
   const sprite = new PIXI.Sprite(texture);
