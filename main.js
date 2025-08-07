@@ -8,11 +8,13 @@ import * as PIXI from "pixi.js";
  * - Cleaner error handling*/
 
 async function init() {
-  const app = new PIXI.Application({
+  const app = new PIXI.Application();
+  await app.init({
     width: 800,
     height: 600,
     backgroundColor: 0x1099bb,
   });
+
   document.body.appendChild(app.canvas);
   // Deprecated: Use app.canvas instead of app.view
   // Why? PixiJS v8 introduced this change to make the naming clearer and to avoid confusion, as .canvas more accurately reflects the type of element being referenced.
@@ -35,4 +37,5 @@ async function init() {
     sprite.rotation += 0.01;
   });
 }
+
 init();
