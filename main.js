@@ -19,9 +19,7 @@ async function init() {
 
   // Load a sprite (a simple graphic to demonstrate)
   const graphics = new PIXI.Graphics();
-  graphics.beginFill(0xde3249);
-  graphics.drawCircle(0, 0, 50);
-  graphics.endFill();
+  graphics.fill(0xde3249).circle(0, 0, 50);
 
   const texture = app.renderer.generateTexture(graphics);
   const sprite = new PIXI.Sprite(texture);
