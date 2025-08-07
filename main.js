@@ -20,7 +20,7 @@ async function init() {
   // Why? PixiJS v8 introduced this change to make the naming clearer and to avoid confusion, as .canvas more accurately reflects the type of element being referenced.
 
   // Load a sprite (a simple graphic to demonstrate)
-  const graphics = new PIXI.Graphics().fill(0xde3249).circle(0, 0, 50);
+  const graphics = new PIXI.Graphics().fill(0xde3249).circle(0, 0, 50).close();
   // graphics.endFill();
   // endFill() is no longer needed (and shouldn't be used) in PixiJS v8.
   // Why? beginFill(...) and endFill() are replaced by a single .fill(...) call.
@@ -35,7 +35,8 @@ async function init() {
   graphics.pivot.set(0, 0); // or set to (25, 25) if needed
 
   // API does not auto-calculate the local bounds (width/height) immediately when using chainable shape methods like .circle() — especially when you don’t set a lineStyle() or use .stroke() or .fill() correctly.
-  graphics.updateLocalBounds();
+  //graphics.updateLocalBounds(); // I gave you a method that doesn't exist on the public Graphics API in PixiJS v8. Apologies for the confusion!
+
   app.stage.addChild(graphics);
 
   // Set the sprite position
