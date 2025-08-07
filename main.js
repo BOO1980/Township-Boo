@@ -33,6 +33,9 @@ async function init() {
 
   graphics.position.set(app.screen.width / 2, app.screen.height / 2);
   graphics.pivot.set(0, 0); // or set to (25, 25) if needed
+
+  // API does not auto-calculate the local bounds (width/height) immediately when using chainable shape methods like .circle() — especially when you don’t set a lineStyle() or use .stroke() or .fill() correctly.
+  graphics.updateLocalBounds();
   app.stage.addChild(graphics);
 
   // Set the sprite position
