@@ -20,25 +20,30 @@ async function init() {
   // Why? PixiJS v8 introduced this change to make the naming clearer and to avoid confusion, as .canvas more accurately reflects the type of element being referenced.
 
   // Load a sprite (a simple graphic to demonstrate)
-  const graphics = new PIXI.Graphics();
-  graphics.fill(0xde3249).circle(0, 0, 50);
+  const graphics = new PIXI.Graphics().fill(0xde3249).circle(0, 0, 50);
   // graphics.endFill();
   // endFill() is no longer needed (and shouldn't be used) in PixiJS v8.
   // Why? beginFill(...) and endFill() are replaced by a single .fill(...) call.
   // Why? Drawing and styling are now chainable, which makes code cleaner.
 
-  const texture = app.renderer.generateTexture(graphics);
-  const sprite = new PIXI.Sprite(texture);
+  // const texture = app.renderer.generateTexture(graphics);
+  // const sprite = new PIXI.Sprite(texture);
+
+  /*PIXI.Graphics objects aren't automatically rendered unless you add graphics directly to the stage. Generating a texture from them, like you're doing with generateTexture(), needs a slightly different approach.*/
+
+  graphics.position.set(app.screen.width / 2, app.screen.height / 2);
+  graphics.pivot.set(0, 0); // or set to (25, 25) if needed
+  app.stage.addChild(graphics);
 
   // Set the sprite position
-  sprite.anchor.set(0.5);
-  sprite.x = app.screen.width / 2;
-  sprite.y = app.screen.height / 2;
-  app.stage.addChild(sprite);
+  // sprite.anchor.set(0.5);
+  // sprite.x = app.screen.width / 2;
+  // sprite.y = app.screen.height / 2;
+  // app.stage.addChild(sprite);
 
   // Animate the sprite
   app.ticker.add(() => {
-    sprite.rotation += 0.01;
+    graphics.rotation += 0.01;
   });
 }
 
