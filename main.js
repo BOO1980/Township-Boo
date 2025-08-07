@@ -9,6 +9,7 @@ import * as PIXI from "pixi.js";
 
 async function init() {
   const app = new PIXI.Application();
+  globalThis.__PIXI_APP__ = app;
   await app.init({
     width: 800,
     height: 600,
@@ -20,7 +21,7 @@ async function init() {
   // Why? PixiJS v8 introduced this change to make the naming clearer and to avoid confusion, as .canvas more accurately reflects the type of element being referenced.
 
   // Load a sprite (a simple graphic to demonstrate)
-  const graphics = new PIXI.Graphics().fill(0xde3249).circle(0, 0, 50);
+  const graphics = new PIXI.Graphics().circle(0, 0, 50).fill(0xde3249);
   // .close();
   // graphics.endFill();
   // endFill() is no longer needed (and shouldn't be used) in PixiJS v8.
