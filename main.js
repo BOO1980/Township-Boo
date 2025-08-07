@@ -23,7 +23,9 @@ async function init() {
   const graphics = new PIXI.Graphics();
   graphics.fill(0xde3249).circle(0, 0, 50);
   // graphics.endFill();
-  //  endFill() is no longer needed (and shouldn't be used) in PixiJS v8.
+  // endFill() is no longer needed (and shouldn't be used) in PixiJS v8.
+  // Why? beginFill(...) and endFill() are replaced by a single .fill(...) call.
+  // Why? Drawing and styling are now chainable, which makes code cleaner.
 
   const texture = app.renderer.generateTexture(graphics);
   const sprite = new PIXI.Sprite(texture);
