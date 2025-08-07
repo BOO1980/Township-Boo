@@ -20,7 +20,8 @@ async function init() {
   // Why? PixiJS v8 introduced this change to make the naming clearer and to avoid confusion, as .canvas more accurately reflects the type of element being referenced.
 
   // Load a sprite (a simple graphic to demonstrate)
-  const graphics = new PIXI.Graphics().fill(0xde3249).circle(0, 0, 50).close();
+  const graphics = new PIXI.Graphics().fill(0xde3249).circle(0, 0, 50);
+  // .close();
   // graphics.endFill();
   // endFill() is no longer needed (and shouldn't be used) in PixiJS v8.
   // Why? beginFill(...) and endFill() are replaced by a single .fill(...) call.
