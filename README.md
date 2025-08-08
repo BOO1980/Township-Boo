@@ -1,5 +1,7 @@
 # Township-Boo
 
+https://chatgpt.com/g/g-p-68909e016d648191bc28f2bc26c66c98-javascriptgame/c/6894d40a-db84-832b-8c10-404ededde3ce
+
 # 🎮 PixiJS Vite Game Starter
 
 This is a basic starter template for building browser games using [PixiJS](https://pixijs.com/) and [Vite](https://vitejs.dev/).
