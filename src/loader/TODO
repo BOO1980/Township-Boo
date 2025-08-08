@@ -1,0 +1,19 @@
+A LoaderState that loads assets
+
+A progress bar while loading
+
+A transition to the next state (e.g. MainGameState) once loading completes
+
+Game State Manager
+A simple system to manage states like:
+
+BootState → init setup
+
+LoaderState → loading assets
+
+MainGameState → actual game
+
+GameOverState, etc.
+
+PIXI.Loader
+Pixi’s asset loader for images, sounds, etc.
